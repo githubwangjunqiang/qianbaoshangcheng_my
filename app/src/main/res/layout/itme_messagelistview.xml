@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:padding="@dimen/pading_10"
+    android:orientation="horizontal">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/tongzhi1" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/pading_10"
+        android:layout_marginRight="@dimen/pading_10"
+        android:background="@drawable/yuan_dialog"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/pading_10"
+            android:text="新订单：付款状态：已在线支付"
+            android:textColor="@color/text_color"
+            android:textSize="@dimen/size_text_14" />
+
+        <TextView
+            android:id="@+id/itme_goodsname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:padding="@dimen/pading_10"
+            tools:text="商品名称，内容 "
+            android:textColor="@color/text_color"
+            android:textSize="@dimen/size_text_12" />
+        <TextView
+            android:id="@+id/itme_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:padding="@dimen/pading_10"
+            tools:text="订单价格，00 "
+            android:textColor="@color/text_color"
+            android:textSize="@dimen/size_text_12" />
+
+
+        <TextView
+            android:id="@+id/itme_tvusername"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:padding="@dimen/pading_10"
+            tools:text="联系人：姓名"
+            android:textColor="@color/text_color"
+            android:textSize="@dimen/size_text_12" />
+
+        <TextView
+            android:id="@+id/itme_tvphone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:padding="@dimen/pading_10"
+            tools:text="联系电话：88888888"
+            android:textColor="@color/text_color"
+            android:textSize="@dimen/size_text_12" />
+
+        <TextView
+            android:id="@+id/itme_tvtime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:padding="@dimen/pading_10"
+            tools:text="时间：2000-00-00-00-00"
+            android:textColor="@color/text_color_alp"
+            android:textSize="@dimen/size_text_12" />
+    </LinearLayout>
+
+</LinearLayout>

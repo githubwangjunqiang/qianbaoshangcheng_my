@@ -259,4 +259,9 @@ public class HttpUrl {
      store_withdrawals
      */
     public static final String store_withdrawals = URL + "store_withdrawals";
+    /**
+     * 61、商家端  消息列表
+     store_message_list
+     */
+    public static final String store_message_list = URL + "store_message_list";
 }
