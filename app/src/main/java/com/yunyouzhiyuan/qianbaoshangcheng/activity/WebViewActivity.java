@@ -1,8 +1,10 @@
 package com.yunyouzhiyuan.qianbaoshangcheng.activity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.webkit.DownloadListener;
 import android.webkit.WebSettings;
@@ -21,6 +23,16 @@ public class WebViewActivity extends BaseActivity {
     private WebView mView;
     private ImageView ibBack;
     private TextView tvtitle;
+
+    public static void startWebViewActivity(Context context, String url, String title) {
+        Intent intent = new Intent(context, WebViewActivity.class);
+        intent.putExtra("url", url);
+        if (!TextUtils.isEmpty(title)) {
+            intent.putExtra("title", title);
+        }
+        context.startActivity(intent);
+
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,7 +75,7 @@ public class WebViewActivity extends BaseActivity {
     }
 
     /**
-     *监听器
+     * 监听器
      */
     private void setlistener() {
         ibBack.setOnClickListener(new View.OnClickListener() {
@@ -101,7 +113,7 @@ public class WebViewActivity extends BaseActivity {
     public void onBackPressed() {
         if (mView.canGoBack()) {
             mView.goBack();
-        }else{
+        } else {
             super.onBackPressed();
         }
     }

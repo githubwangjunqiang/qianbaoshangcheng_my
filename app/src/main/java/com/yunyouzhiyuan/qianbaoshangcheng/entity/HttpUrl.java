@@ -264,4 +264,14 @@ public class HttpUrl {
      store_message_list
      */
     public static final String store_message_list = URL + "store_message_list";
+    /**
+     * 62、商家端  关于我们（H5）
+     storeaboutus
+     */
+    public static final String storeaboutus = URL + "storeaboutus";
+    /**
+     * 63、商家端   反馈
+     feed_back
+     */
+    public static final String feed_back = URL + "feed_back";
 }

@@ -8,7 +8,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.yunyouzhiyuan.qianbaoshangcheng.R;
+import com.yunyouzhiyuan.qianbaoshangcheng.entity.HttpUrl;
 import com.yunyouzhiyuan.qianbaoshangcheng.ui.ActivityCollector;
+import com.yunyouzhiyuan.qianbaoshangcheng.ui.dialog.Dialog_SubmitOpinion;
 
 import org.xutils.view.annotation.ViewInject;
 import org.xutils.x;
@@ -63,8 +65,10 @@ public class MyActivity extends BaseActivity {
                 startActivity(new Intent(MyActivity.this, TongjiActivity.class));
                 break;
             case R.id.activity_my_yijian://点击意见
+                new Dialog_SubmitOpinion(this).show();
                 break;
             case R.id.activity_my_guanyuwomen://点关于我们
+                WebViewActivity.startWebViewActivity(this, HttpUrl.storeaboutus,null);
                 break;
             case R.id.activity_my_tuichudenglu://点击退出
                 ActivityCollector.finishAll();
