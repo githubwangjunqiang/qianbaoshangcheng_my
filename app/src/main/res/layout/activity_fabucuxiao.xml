@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <include layout="@layout/top" />
+
+    <com.baoyz.widget.PullRefreshLayout
+        android:id="@+id/cuxiao_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:refreshType="water_drop">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/background"
+                    android:padding="@dimen/pading_10"
+                    android:text="@string/canjiacuxiao"
+                    android:textColor="@color/text_color"
+                    android:textSize="@dimen/size_text_14" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingLeft="@dimen/pading_10"
+                    android:paddingRight="@dimen/pading_10"
+                    android:paddingTop="@dimen/pading_10">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/cuxiaobiaoti"
+                        android:textColor="@color/text_color"
+                        android:textSize="@dimen/size_text_13" />
+
+                    <EditText
+                        android:id="@+id/cuxiao_etname"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/pading_10"
+                        android:layout_weight="1"
+                        android:background="@drawable/edittext_biankuang"
+                        android:hint="请输入促销标题信息"
+                        android:imeOptions="actionNext"
+                        android:inputType="textImeMultiLine"
+                        android:padding="@dimen/pading_6"
+                        android:textColor="@color/text_color"
+                        android:textColorHint="@color/text_color_alp"
+                        android:textSize="@dimen/size_text_13" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingLeft="@dimen/pading_10"
+                    android:paddingRight="@dimen/pading_10"
+                    android:paddingTop="@dimen/pading_10">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/huodongleixing"
+                        android:textColor="@color/text_color"
+                        android:textSize="@dimen/size_text_13" />
+
+                    <Spinner
+                        android:id="@+id/cuxiao_leixingsp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/pading_10" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingLeft="@dimen/pading_10"
+                    android:paddingRight="@dimen/pading_10"
+                    android:paddingTop="@dimen/pading_10">
+
+                    <TextView
+                        android:id="@+id/cuxiao_tvtype"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/lijianjiage"
+                        android:textColor="@color/text_color"
+                        android:textSize="@dimen/size_text_13" />
+
+                    <EditText
+                        android:id="@+id/cuxiao_etprice"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/pading_10"
+                        android:layout_weight="1"
+                        android:background="@drawable/edittext_biankuang"
+                        android:hint="输入立减金额"
+                        android:imeOptions="actionNext"
+                        android:inputType="textImeMultiLine|numberDecimal"
+                        android:padding="@dimen/pading_6"
+                        android:textColor="@color/text_color"
+                        android:textColorHint="@color/text_color_alp"
+                        android:textSize="@dimen/size_text_13" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingLeft="@dimen/pading_10"
+                    android:paddingRight="@dimen/pading_10"
+                    android:paddingTop="@dimen/pading_10">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/kaishishijian"
+                        android:textColor="@color/text_color"
+                        android:textSize="@dimen/size_text_13" />
+
+                    <TextView
+                        android:id="@+id/cuxiao_starttime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/pading_10"
+                        android:background="@drawable/edittext_biankuang"
+                        android:hint="点击选择时间"
+                        android:minWidth="@dimen/pading_100"
+                        android:padding="@dimen/pading_6"
+                        android:textColor="@color/text_color"
+                        android:textColorHint="@color/text_color_alp"
+                        android:textSize="@dimen/size_text_13" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingLeft="@dimen/pading_10"
+                    android:paddingRight="@dimen/pading_10"
+                    android:paddingTop="@dimen/pading_10">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/jieshushijian"
+                        android:textColor="@color/text_color"
+                        android:textSize="@dimen/size_text_13" />
+
+                    <TextView
+                        android:id="@+id/cuxiao_startlasttime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/pading_10"
+                        android:background="@drawable/edittext_biankuang"
+                        android:hint="点击选择时间"
+                        android:minWidth="@dimen/pading_100"
+                        android:padding="@dimen/pading_6"
+                        android:textColor="@color/text_color"
+                        android:textColorHint="@color/text_color_alp"
+                        android:textSize="@dimen/size_text_13" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_marginTop="@dimen/pading_10"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/background"
+                    android:padding="@dimen/pading_10"
+                    android:text="@string/xuanzeshangpin"
+                    android:textColor="@color/text_color"
+                    android:textSize="@dimen/size_text_14" />
+
+                <com.yunyouzhiyuan.qianbaoshangcheng.ui.MyListview
+                    android:id="@+id/cuxiao_listview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:choiceMode="multipleChoice" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/pading_0.5"
+                    android:background="@color/background" />
+
+                <Button
+                    android:id="@+id/cuxiao_btnok"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/pading_20"
+                    android:background="@color/app_color"
+                    android:minHeight="@dimen/pading_1"
+                    android:padding="@dimen/pading_10"
+                    android:text="@string/ok"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/size_text_14" />
+            </LinearLayout>
+        </ScrollView>
+    </com.baoyz.widget.PullRefreshLayout>
+</LinearLayout>

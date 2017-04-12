@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#f76e0c</color>
+    <color name="colorAccent">#FF4081</color>
+
+
+    <color name="app_color">#f76e0c</color>
+    <color name="app_color_alp">#aaf76e0c</color>
+    <color name="text_color">#646464</color>
+    <color name="text_color_alp">#cc646464</color>
+    <color name="background">#ece5e5</color>
+    <color name="lite_alp">#55000000</color>
+    <color name="white">#ffffff</color>
+    <color name="blue">#FF375BF1</color>
+    <color name="blue_tian">#46b2ed</color>
+    <color name="blue_p">#057dbf</color>
+    <color name="yellow">#FFF7D23E</color>
+    <color name="green">#FF34A350</color>
+    <color name="green_p">#05d139</color>
+    <color name="red">#FF3300</color>
+</resources>

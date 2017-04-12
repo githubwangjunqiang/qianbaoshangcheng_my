@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:orientation="vertical">
+
+    <com.yunyouzhiyuan.qianbaoshangcheng.ui.xlistview.XListView
+        android:id="@+id/fragment_shenqing_jilu_one_xlistview"
+        android:layout_width="match_parent"
+        android:divider="@color/background"
+        android:dividerHeight="@dimen/pading_4"
+        android:layout_height="match_parent">
+
+    </com.yunyouzhiyuan.qianbaoshangcheng.ui.xlistview.XListView>
+</LinearLayout>

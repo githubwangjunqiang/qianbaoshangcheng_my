@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.baoyz.widget.PullRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/mainlayout"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:refreshType="circles"
+    android:background="@color/background">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/app_color"
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/pading_10">
+
+                <ImageView
+                    android:id="@+id/activity_main_ivimage"
+                    android:layout_width="@dimen/pading_60"
+                    android:layout_height="@dimen/pading_60"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/pading_30"
+                    android:src="@mipmap/t1" />
+
+                <TextView
+                    android:id="@+id/activity_main_tvname"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:paddingTop="@dimen/pading_10"
+                    android:text="昵称"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/size_text_12"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/activity_main_tvadress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:drawableLeft="@mipmap/dingwei"
+                    android:gravity="center_vertical"
+                    android:text="地址地址地址"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/size_text_12"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <com.yunyouzhiyuan.qianbaoshangcheng.ui.MyGridView
+                android:id="@+id/activity_main_gv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:horizontalSpacing="@dimen/pading_8"
+                android:numColumns="2"
+                android:padding="@dimen/pading_10"
+                android:verticalSpacing="@dimen/pading_8"></com.yunyouzhiyuan.qianbaoshangcheng.ui.MyGridView>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+</com.baoyz.widget.PullRefreshLayout>

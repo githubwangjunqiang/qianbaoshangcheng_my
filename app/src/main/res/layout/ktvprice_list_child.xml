@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/pading_0.5"
+        android:background="@color/background" />
+
+    <TextView
+        android:id="@+id/ktvprice_list_child_tvfangxing"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/pading_10"
+        android:paddingLeft="@dimen/pading_20"
+        android:paddingRight="@dimen/pading_10"
+        android:paddingTop="@dimen/pading_10"
+        android:textColor="@color/text_color"
+        android:textSize="@dimen/size_text_13"
+        tools:text="豪华中大包" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/pading_0.5"
+        android:background="@color/background" />
+
+    <com.yunyouzhiyuan.qianbaoshangcheng.ui.MyListview
+        android:id="@+id/ktvprice_list_child_listview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="@dimen/pading_40" />
+</LinearLayout>

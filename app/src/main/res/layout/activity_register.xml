@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="@color/app_color"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/top" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="@dimen/pading_60"
+        android:layout_marginRight="@dimen/pading_60"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <EditText
+                android:imeOptions="actionNext"
+                android:id="@+id/activity_register_etphone"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@null"
+                android:drawableLeft="@mipmap/shouji"
+                android:hint="请输入手机号"
+                android:inputType="phone"
+                android:padding="@dimen/pading_4"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:textSize="@dimen/size_text_14"
+                />
+
+            <TextView
+                android:id="@+id/activity_register_tvcode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/yuan_login"
+                android:onClick="doClick"
+                android:padding="@dimen/pading_4"
+                android:text="获取验证码"
+                android:textColor="@color/white"
+                android:textSize="@dimen/size_text_12" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/pading_0.5"
+            android:background="@color/white"></View>
+
+        <EditText
+            android:imeOptions="actionNext"
+            android:id="@+id/activity_register_etcode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/pading_20"
+            android:background="@null"
+            android:drawableLeft="@mipmap/yanzhengma"
+            android:hint="请输入验证码"
+            android:inputType="number"
+            android:padding="@dimen/pading_4"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:textSize="@dimen/size_text_14"
+            />
+
+        <EditText
+            android:imeOptions="actionNext"
+            android:id="@+id/activity_register_etpas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/pading_20"
+            android:background="@null"
+            android:drawableLeft="@mipmap/password"
+            android:hint="请输入账号密码"
+            android:inputType="textPassword"
+            android:padding="@dimen/pading_4"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:textSize="@dimen/size_text_14"
+            />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/pading_0.5"
+            android:background="@color/white"></View>
+
+        <EditText
+            android:imeOptions="actionDone"
+            android:id="@+id/activity_register_etpas2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/pading_20"
+            android:background="@null"
+            android:drawableLeft="@mipmap/password"
+            android:hint="请确认账号密码"
+            android:inputType="textPassword"
+            android:padding="@dimen/pading_4"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:textSize="@dimen/size_text_14"
+            />
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/pading_0.5"
+            android:background="@color/white"></View>
+
+        <TextView
+            android:id="@+id/activity_register_tvbtnok"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/pading_30"
+            android:background="@drawable/yuan_login"
+            android:gravity="center"
+            android:onClick="doClick"
+            android:paddingBottom="@dimen/pading_6"
+            android:paddingTop="@dimen/pading_6"
+            android:text="注册"
+            android:textColor="@color/white"
+            android:textSize="@dimen/size_text_14"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/activity_register_tvxieyi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/register_xieyi"
+                android:gravity="center_vertical"
+                android:onClick="doClick"
+                android:paddingTop="@dimen/pading_10"
+                android:text="我已阅读并同意"
+                android:textColor="@color/white"
+                android:textSize="@dimen/size_text_12" />
+
+            <TextView
+                android:id="@+id/activity_register_tvchakanxie"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:onClick="doClick"
+                android:paddingTop="@dimen/pading_10"
+                android:text="《黔宝商城协议》"
+                android:textColor="@android:color/holo_red_dark"
+                android:textSize="@dimen/size_text_12"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

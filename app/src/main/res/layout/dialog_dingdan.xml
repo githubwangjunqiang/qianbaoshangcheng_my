@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/pading_20"
+    android:background="@drawable/yuan_dialog"
+    android:orientation="vertical"
+    android:padding="@dimen/pading_20">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/dialogdingdan"
+        android:textColor="@color/text_color"
+        android:textSize="@dimen/size_text_14" />
+
+    <RadioGroup
+        android:id="@+id/dialog_dingdan_rg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:padding="@dimen/pading_20">
+
+
+        <RadioButton
+            android:id="@+id/dialog_dingdan_rb1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/yuan_rbfabu"
+            android:button="@null"
+            android:paddingBottom="@dimen/pading_6"
+            android:paddingLeft="@dimen/pading_20"
+            android:paddingRight="@dimen/pading_20"
+            android:paddingTop="@dimen/pading_6"
+            android:text="@string/youhuiquan"
+            android:textColor="@color/text_app_color_c"
+            android:textSize="@dimen/size_text_13" />
+
+        <RadioButton
+            android:id="@+id/dialog_dingan_rb2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/pading_10"
+            android:background="@drawable/yuan_rbfabu"
+            android:button="@null"
+            android:paddingBottom="@dimen/pading_6"
+            android:paddingLeft="@dimen/pading_20"
+            android:paddingRight="@dimen/pading_20"
+            android:paddingTop="@dimen/pading_6"
+            android:text="@string/waimaidingdan"
+            android:textColor="@color/text_app_color_c"
+            android:textSize="@dimen/size_text_13" />
+
+    </RadioGroup>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/dialog_dingdan_tvok"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/yuan_rbfabu_shenqing"
+            android:gravity="center"
+            android:paddingBottom="@dimen/pading_6"
+            android:paddingTop="@dimen/pading_6"
+            android:text="@string/ok"
+            android:textColor="@color/white"
+            android:textSize="@dimen/size_text_12" />
+
+        <TextView
+            android:id="@+id/dialog_dingdan_tvover"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/pading_10"
+            android:layout_weight="1"
+            android:background="@drawable/yuan_rbfabu"
+            android:gravity="center"
+            android:paddingBottom="@dimen/pading_6"
+            android:paddingTop="@dimen/pading_6"
+            android:text="@string/over"
+            android:textColor="@color/text_app_color_p"
+            android:textSize="@dimen/size_text_12" />
+    </LinearLayout>
+</LinearLayout>

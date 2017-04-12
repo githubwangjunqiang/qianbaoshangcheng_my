@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.yunyouzhiyuan.qianbaoshangcheng.activity.yunfeiActivity">
+
+    <include layout="@layout/top" />
+
+    <com.baoyz.widget.PullRefreshLayout
+        android:id="@+id/freight_layout"
+        android:layout_width="match_parent"
+        app:refreshType="smartisan"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:lineSpacingExtra="@dimen/pading_4"
+                android:padding="@dimen/pading_10"
+                android:text="@string/ninshezhideyunfei"
+                android:textColor="@color/text_color"
+                android:textSize="@dimen/size_text_13" />
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:padding="@dimen/pading_10">
+
+                <EditText
+                    android:id="@+id/yunfei_etprice"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="请输入你的配送费"
+                    android:inputType="numberDecimal"
+                    android:maxLength="5"
+                    android:textColor="@color/text_color"
+                    android:textColorHint="@color/text_app_color"
+                    android:textSize="@dimen/size_text_14" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:padding="@dimen/pading_10">
+
+                <EditText
+                    android:id="@+id/yunfei_etqishiprice"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="请输入你的配送起始价，默认为0"
+                    android:inputType="numberDecimal"
+                    android:maxLength="5"
+                    android:textColor="@color/text_color"
+                    android:textColorHint="@color/text_app_color"
+                    android:textSize="@dimen/size_text_14" />
+            </android.support.design.widget.TextInputLayout>
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/pading_20"
+                android:background="@color/app_color"
+                android:gravity="center"
+                android:minHeight="@dimen/pading_2"
+                android:onClick="subMit"
+                android:padding="@dimen/pading_10"
+                android:text="@string/ok"
+                android:textColor="@color/white"
+                android:textSize="@dimen/size_text_14" />
+        </LinearLayout>
+
+    </com.baoyz.widget.PullRefreshLayout>
+</LinearLayout>

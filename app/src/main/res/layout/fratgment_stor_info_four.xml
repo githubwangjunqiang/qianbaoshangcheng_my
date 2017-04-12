@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="@dimen/pading_10">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/fragment_stor_info_four_et0"
+                android:textColor="@color/text_color"
+                android:textSize="@dimen/size_text_12" />
+
+            <EditText
+                android:id="@+id/fragment_stor_info_four_etshopping"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@null"
+                android:gravity="right"
+                android:hint="@string/fragment_stor_info_four_et1"
+                android:imeOptions="actionNext"
+                android:inputType="numberDecimal"
+                android:textColor="@color/text_color"
+                android:textColorHint="@color/text_color_alp"
+                android:textSize="@dimen/size_text_12" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/pading_1"
+            android:background="@color/white"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="@dimen/pading_10">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/fragment_stor_info_four_et2"
+                android:textColor="@color/text_color"
+                android:textSize="@dimen/size_text_12" />
+
+            <EditText
+                android:id="@+id/fragment_stor_info_four_etxiaofei"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@null"
+                android:gravity="right"
+                android:hint="@string/fragment_stor_info_four_et3"
+                android:imeOptions="actionDone"
+                android:inputType="numberDecimal"
+                android:textColor="@color/text_color"
+                android:textColorHint="@color/text_color_alp"
+                android:textSize="@dimen/size_text_12" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/pading_1"
+            android:background="@color/white"
+            android:gravity="center_vertical"
+            android:padding="@dimen/pading_10"
+            android:text="@string/fragment_stor_info_four_et4"
+            android:textColor="@color/text_color"
+            android:textSize="@dimen/size_text_12" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="horizontal"
+            android:padding="@dimen/pading_10">
+
+            <ImageView
+                android:id="@+id/fragment_stor_info_four_ivshopping"
+                android:layout_width="@dimen/pading_100"
+                android:layout_height="@dimen/pading_100"
+                android:background="@color/background"
+                android:scaleType="fitCenter"
+                android:src="@mipmap/tianjia" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/fragment_stor_info_four_tvbuttom_ok"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/app_color"
+        android:gravity="center"
+        android:padding="@dimen/pading_10"
+        android:text="@string/activity_stor_info_ok"
+        android:textColor="@color/white"
+        android:textSize="@dimen/size_text_14" />
+</RelativeLayout>

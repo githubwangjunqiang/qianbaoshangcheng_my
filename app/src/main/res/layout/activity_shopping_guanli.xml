@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:orientation="vertical">
+
+    <include layout="@layout/top" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/activity_shoppimng_guanli_et"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/pading_10"
+            android:layout_weight="1"
+            android:background="@drawable/yuan_et"
+            android:drawableLeft="@mipmap/sousuo"
+            android:gravity="center_vertical"
+            android:hint="@string/qingshurushangpinmingchen"
+            android:imeOptions="actionSearch"
+            android:inputType="text"
+            android:maxLength="20"
+            android:minHeight="@dimen/pading_30"
+            android:paddingLeft="@dimen/pading_10"
+            android:paddingRight="@dimen/pading_10"
+            android:textColor="@color/text_color"
+            android:textColorHint="@color/text_color_alp"
+            android:textSize="@dimen/size_text_12" />
+
+        <TextView
+            android:id="@+id/activity_shoppimng_guanli_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="@dimen/pading_10"
+            android:background="@drawable/yuan_et"
+            android:paddingBottom="@dimen/pading_6"
+            android:paddingLeft="@dimen/pading_10"
+            android:paddingRight="@dimen/pading_10"
+            android:paddingTop="@dimen/pading_6"
+            android:text="@string/sousuo"
+            android:textColor="@color/app_color"
+            android:textSize="@dimen/size_text_12"
+            android:visibility="gone" />
+    </LinearLayout>
+
+
+    <com.yunyouzhiyuan.qianbaoshangcheng.ui.xlistview.XListView
+        android:id="@+id/activity_shoppimng_guanli_listview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:divider="@color/background"
+        android:dividerHeight="@dimen/pading_4">
+
+    </com.yunyouzhiyuan.qianbaoshangcheng.ui.xlistview.XListView>
+</LinearLayout>

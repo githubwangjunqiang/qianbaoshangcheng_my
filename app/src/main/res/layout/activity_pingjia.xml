@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.yunyouzhiyuan.qianbaoshangcheng.activity.PingjiaActivity">
+
+    <include layout="@layout/top" />
+
+    <com.baoyz.widget.PullRefreshLayout
+        android:id="@+id/pingjia_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:refreshType="water_drop">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <com.yunyouzhiyuan.qianbaoshangcheng.ui.SquareImageView
+                    android:id="@+id/pingjia_ivimage"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/pading_6"
+                    android:layout_weight="1"
+                    tools:src="@mipmap/t1" />
+
+                <TextView
+                    android:id="@+id/pingjia_tvname"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:paddingLeft="@dimen/pading_10"
+                    android:textColor="@color/text_color"
+                    android:textSize="@dimen/size_text_13"
+                    tools:text="昵称黔宝商城" />
+
+                <TextView
+                    android:id="@+id/pingjia_tvtime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingRight="@dimen/pading_10"
+                    android:textColor="@color/text_color_alp"
+                    android:textSize="@dimen/size_text_12"
+                    tools:text="2008.00.00" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/pingjia_tvcontent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/pading_1"
+                android:background="@color/white"
+                android:lineSpacingExtra="@dimen/pading_4"
+                android:paddingBottom="@dimen/pading_6"
+                android:paddingLeft="@dimen/pading_10"
+                android:paddingRight="@dimen/pading_10"
+                android:paddingTop="@dimen/pading_6"
+                android:textColor="@color/text_color"
+                android:textSize="@dimen/size_text_13"
+                tools:text="内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容" />
+
+            <GridView
+                android:id="@+id/pingjia_gv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/pading_1"
+                android:background="@color/white"
+                android:horizontalSpacing="@dimen/pading_6"
+                android:numColumns="3"
+                android:padding="@dimen/pading_6"
+                android:verticalSpacing="@dimen/pading_6" />
+        </LinearLayout>
+
+    </com.baoyz.widget.PullRefreshLayout>
+</LinearLayout>

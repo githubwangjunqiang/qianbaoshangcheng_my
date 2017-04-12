@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.yunyouzhiyuan.qianbaoshangcheng.activity.FabuKTVHoTelActivity">
+
+    <include layout="@layout/top" />
+
+    <ScrollView
+        android:id="@+id/food_scrollview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/pading_10"
+                android:paddingRight="@dimen/pading_10"
+                android:paddingTop="@dimen/pading_10">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/shangpinbiaoti"
+                    android:textColor="@color/text_color_alp"
+                    android:textSize="@dimen/size_text_13" />
+
+                <EditText
+                    android:id="@+id/food_etname"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/pading_10"
+                    android:layout_weight="1"
+                    android:background="@drawable/edittext_biankuang"
+                    android:imeOptions="actionNext"
+                    android:inputType="textImeMultiLine"
+                    android:padding="@dimen/pading_6"
+                    android:textColor="@color/text_color"
+                    android:textSize="@dimen/size_text_13" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="@dimen/pading_10">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/shangpinxiangqing"
+                    android:textColor="@color/text_color_alp"
+                    android:textSize="@dimen/size_text_13" />
+
+                <EditText
+                    android:id="@+id/food_etinfo"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/pading_10"
+                    android:layout_weight="1"
+                    android:background="@drawable/edittext_biankuang"
+                    android:gravity="top"
+                    android:imeOptions="actionNext"
+                    android:inputType="textMultiLine"
+                    android:minHeight="@dimen/pading_60"
+                    android:padding="@dimen/pading_6"
+                    android:textColor="@color/text_color"
+                    android:textSize="@dimen/size_text_13" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/pading_10"
+                android:paddingRight="@dimen/pading_10">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/shangpinfenlei"
+                    android:textColor="@color/text_color_alp"
+                    android:textSize="@dimen/size_text_13" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/pading_10"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <Spinner
+                        android:id="@+id/food_sp0"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" />
+
+                    <Spinner
+                        android:id="@+id/food_sp1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/pading_10"
+                        android:layout_weight="1" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/pading_10"
+                android:paddingRight="@dimen/pading_10"
+                android:paddingTop="@dimen/pading_10">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/shangpinfenlei"
+                    android:textColor="@android:color/transparent"
+                    android:textSize="@dimen/size_text_13" />
+
+                <Spinner
+                    android:id="@+id/food_sp2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/pading_10" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/pading_10"
+                android:paddingRight="@dimen/pading_10"
+                android:paddingTop="@dimen/pading_10">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/shangpinbiaoqian"
+                    android:textColor="@color/text_color_alp"
+                    android:textSize="@dimen/size_text_13" />
+
+                <EditText
+                    android:id="@+id/food_sp3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/pading_10"
+                    android:background="@drawable/edittext_biankuang"
+                    android:hint="请输入标签"
+                    android:inputType="textImeMultiLine"
+                    android:padding="@dimen/pading_6"
+                    android:textColor="@color/text_color"
+                    android:textColorHint="@color/text_color_alp"
+                    android:textSize="@dimen/size_text_13" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/pading_10"
+                android:paddingRight="@dimen/pading_10"
+                android:paddingTop="@dimen/pading_10">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/bendianshoujia"
+                    android:textColor="@color/text_color_alp"
+                    android:textSize="@dimen/size_text_13" />
+
+                <EditText
+                    android:id="@+id/food_etprice"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/pading_10"
+                    android:layout_weight="1"
+                    android:background="@drawable/edittext_biankuang"
+                    android:imeOptions="actionNext"
+                    android:inputType="numberDecimal"
+                    android:maxLength="10"
+                    android:padding="@dimen/pading_6"
+                    android:textColor="@color/text_color"
+                    android:textSize="@dimen/size_text_13" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/pading_10"
+                android:paddingRight="@dimen/pading_10"
+                android:paddingTop="@dimen/pading_10">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/shichangjia"
+                    android:textColor="@color/text_color_alp"
+                    android:textSize="@dimen/size_text_13" />
+
+                <EditText
+                    android:id="@+id/food_etoldprice"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/pading_10"
+                    android:layout_weight="1"
+                    android:background="@drawable/edittext_biankuang"
+                    android:imeOptions="actionNext"
+                    android:inputType="numberDecimal"
+                    android:maxLength="10"
+                    android:padding="@dimen/pading_6"
+                    android:textColor="@color/text_color"
+                    android:textSize="@dimen/size_text_13" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/pading_10"
+                android:paddingRight="@dimen/pading_10"
+                android:paddingTop="@dimen/pading_10">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/youjinjjiage"
+                    android:textColor="@color/text_color_alp"
+                    android:textSize="@dimen/size_text_13" />
+
+                <EditText
+                    android:id="@+id/food_etyongjin"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/pading_10"
+                    android:layout_weight="1"
+                    android:background="@drawable/edittext_biankuang"
+                    android:imeOptions="actionNext"
+                    android:inputType="numberDecimal"
+                    android:maxLength="10"
+                    android:padding="@dimen/pading_6"
+                    android:textColor="@color/text_color"
+                    android:textSize="@dimen/size_text_13" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/pading_10"
+                android:paddingRight="@dimen/pading_10"
+                android:paddingTop="@dimen/pading_10">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/kucunliang"
+                    android:textColor="@color/text_color_alp"
+                    android:textSize="@dimen/size_text_13" />
+
+                <EditText
+                    android:id="@+id/food_etnumber"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/pading_10"
+                    android:layout_weight="1"
+                    android:background="@drawable/edittext_biankuang"
+                    android:imeOptions="actionNext"
+                    android:inputType="number"
+                    android:maxLength="10"
+                    android:padding="@dimen/pading_6"
+                    android:textColor="@color/text_color"
+                    android:textSize="@dimen/size_text_13" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/pading_10"
+                android:paddingRight="@dimen/pading_10"
+                android:paddingTop="@dimen/pading_10"
+                android:weightSum="10">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/shangpinxianpin"
+                    android:textColor="@color/text_color_alp"
+                    android:textSize="@dimen/size_text_13" />
+
+                <com.yunyouzhiyuan.qianbaoshangcheng.ui.SquareImageView
+                    android:id="@+id/food_ivimage"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/pading_10"
+                    android:layout_weight="4"
+                    android:scaleType="center"
+                    android:src="@mipmap/tianjiazhaopian" />
+            </LinearLayout>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/background"
+                android:padding="@dimen/pading_10"
+                android:text="@string/shangpinguige"
+                android:textColor="@color/text_color"
+                android:textSize="@dimen/size_text_14" />
+
+            <include layout="@layout/ktvsc_content" />
+
+            <Button
+                android:id="@+id/food_btnok"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/pading_30"
+                android:layout_marginLeft="@dimen/pading_20"
+                android:layout_marginRight="@dimen/pading_20"
+                android:layout_marginTop="@dimen/pading_40"
+                android:background="@color/app_color"
+                android:gravity="center"
+                android:minHeight="@dimen/pading_1"
+                android:padding="@dimen/pading_10"
+                android:text="@string/fabu"
+                android:textColor="@color/white"
+                android:textSize="@dimen/size_text_14" />
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

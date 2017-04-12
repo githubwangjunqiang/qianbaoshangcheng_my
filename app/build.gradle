@@ -1,0 +1,70 @@
+apply plugin: 'com.android.application'
+
+android {
+    signingConfigs {
+        wang {
+            keyAlias 'wang'
+            keyPassword '123456789'
+            storeFile file('D:/华硕云空间/xiangmu/黔宝商城/黔宝商城商户端/商家端签名/qianbao.jks')
+            storePassword '123456789'
+        }
+    }
+    compileSdkVersion 24
+    buildToolsVersion '25.0.0'
+    defaultConfig {
+        applicationId "com.yunyouzhiyuan.qianbaoshangcheng"
+        minSdkVersion 16
+        targetSdkVersion 22
+        versionCode 1
+        versionName "1.0"
+        ndk {
+            //选择要添加的对应cpu类型的.so库。
+            abiFilters 'armeabi', 'armeabi-v7a', 'armeabi-v8a'
+            // 还可以添加 'x86', 'x86_64', 'mips', 'mips64'
+        }
+        manifestPlaceholders = [
+                JPUSH_PKGNAME: applicationId,
+                JPUSH_APPKEY : "aad1279e3d04a738fc5dd35c", //JPush上注册的包名对应的appkey.
+                JPUSH_CHANNEL: "developer-default", //暂时填写默认值即可.
+        ]
+        signingConfig signingConfigs.wang
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            zipAlignEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.wang
+        }
+        debug {
+            signingConfig signingConfigs.wang
+            zipAlignEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    productFlavors {
+    }
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    // 此处以SDK 2.1.8版本为例
+    compile files('libs/BaiduLBS_Android.jar')
+    compile 'com.android.support:appcompat-v7:24.2.1'
+    compile 'org.xutils:xutils:3.3.36'
+    compile 'cn.jiguang:jpush:2.1.8'
+    compile 'com.baoyz.pullrefreshlayout:library:1.2.0'
+    compile 'com.android.support:design:24.2.1'
+    compile 'com.google.code.gson:gson:2.8.0'
+    compile 'com.jakewharton:butterknife:7.0.1'
+    compile 'com.squareup.okhttp3:okhttp:3.6.0'
+    compile 'com.zhy:flowlayout-lib:1.0.3'
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:cardview-v7:25.3.1'
+    compile project(':libzxing-master')
+}

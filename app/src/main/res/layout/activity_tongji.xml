@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:orientation="vertical">
+
+    <include layout="@layout/top" />
+
+
+    <com.yunyouzhiyuan.qianbaoshangcheng.ui.swlayout.SwipyRefreshLayout
+        android:id="@+id/tongji_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:refreshType="material">
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:padding="@dimen/pading_10"
+                    android:text="@string/wodeyue"
+                    android:textColor="@color/text_color"
+                    android:textSize="@dimen/size_text_14" />
+
+                <TextView
+                    android:id="@+id/tongji_tvprice"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/pading_1"
+                    android:background="@color/white"
+                    android:gravity="center_horizontal"
+                    android:padding="@dimen/pading_20"
+                    android:textColor="@color/app_color"
+                    android:textSize="@dimen/size_text_40"
+                    tools:text="0.00()" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:orientation="vertical"
+                    android:padding="@dimen/pading_10">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <EditText
+                            android:id="@+id/tongji_editText"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:hint="请输入提现金额"
+                            android:imeOptions="actionDone"
+                            android:inputType="numberDecimal"
+                            android:maxLength="10"
+                            android:paddingLeft="@dimen/pading_10"
+                            android:paddingRight="@dimen/pading_10"
+                            android:textColor="@color/text_color"
+                            android:textColorHint="@color/text_color_alp"
+                            android:textSize="@dimen/size_text_14" />
+
+                        <TextView
+                            android:id="@+id/tongji_btntixian"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@color/app_color"
+                            android:paddingBottom="@dimen/pading_6"
+                            android:paddingLeft="@dimen/pading_30"
+                            android:paddingRight="@dimen/pading_30"
+                            android:paddingTop="@dimen/pading_6"
+                            android:text="@string/tixian"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/size_text_12" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/pading_10"
+                    android:text="@string/bank"
+                    android:textColor="@color/text_color"
+                    android:textSize="@dimen/size_text_14" />
+
+                <TextView
+                    android:id="@+id/tongji_tvusername"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:drawableLeft="@mipmap/bank"
+                    android:gravity="center_vertical"
+                    android:padding="@dimen/pading_10"
+                    android:textColor="@color/text_color"
+                    android:textSize="@dimen/size_text_13"
+                    tools:text="徐老板" />
+
+                <TextView
+                    android:id="@+id/tongji_tvbankname"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:drawableLeft="@mipmap/bank"
+                    android:gravity="center_vertical"
+                    android:padding="@dimen/pading_10"
+                    android:textColor="@color/text_color"
+                    android:textSize="@dimen/size_text_13"
+                    tools:text="中国农业银行" />
+
+                <TextView
+                    android:id="@+id/tongji_tvbank"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:drawableLeft="@mipmap/bank"
+                    android:gravity="center_vertical"
+                    android:padding="@dimen/pading_10"
+                    android:textColor="@color/text_color"
+                    android:textSize="@dimen/size_text_14"
+                    tools:text="62170000000000000000" />
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/pading_10"
+                    android:text="@string/tixianmingxi"
+                    android:textColor="@color/text_color"
+                    android:textSize="@dimen/size_text_14" />
+
+
+                <com.yunyouzhiyuan.qianbaoshangcheng.ui.MyListview
+                    android:id="@+id/tongji_listview"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:background="@color/white"
+                    android:divider="@color/background" />
+            </LinearLayout>
+        </ScrollView>
+    </com.yunyouzhiyuan.qianbaoshangcheng.ui.swlayout.SwipyRefreshLayout>
+</LinearLayout>

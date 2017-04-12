@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:paddingBottom="@dimen/pading_6"
+    android:paddingRight="@dimen/pading_10"
+    android:paddingTop="@dimen/pading_6">
+
+    <TextView
+        android:id="@+id/ktvprice_list_child_tvtime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/pading_8"
+        android:text="00:30-05:30，时间段："
+        android:textColor="@color/text_color"
+        tools:textSize="@dimen/size_text_13" />
+
+    <TextView
+        android:id="@+id/ktvprice_list_child_et"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@drawable/edittext_biankuang_ktv"
+        android:hint="@string/shurujiage"
+        android:padding="@dimen/pading_6"
+        android:textColor="@color/red"
+        android:textSize="@dimen/size_text_13" />
+    <TextView
+        android:id="@+id/ktvprice_list_child_tvnumber"
+        android:layout_width="0dp"
+        android:layout_marginLeft="@dimen/pading_6"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@drawable/edittext_biankuang_ktv"
+        android:hint="@string/shurukucun"
+        android:padding="@dimen/pading_6"
+        android:textColor="@color/red"
+        android:textSize="@dimen/size_text_13" />
+
+
+</LinearLayout>

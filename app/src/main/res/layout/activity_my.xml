@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:orientation="vertical"
+    >
+    <include layout="@layout/top"/>
+    <TextView
+        android:onClick="doClick"
+        android:id="@+id/activity_my_bianji"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:padding="@dimen/pading_10"
+        android:gravity="center_vertical"
+        android:drawableRight="@mipmap/jinru"
+        android:textColor="@color/text_color"
+        android:textSize="@dimen/size_text_14"
+        android:text="@string/gerenzhuyebianji"/>
+    <TextView
+        android:onClick="doClick"
+        android:id="@+id/activity_my_tvtongji"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:layout_marginTop="@dimen/pading_1"
+        android:padding="@dimen/pading_10"
+        android:gravity="center_vertical"
+        android:drawableRight="@mipmap/jinru"
+        android:textColor="@color/text_color"
+        android:textSize="@dimen/size_text_14"
+        android:text="金额统计  00元"/>
+    <TextView
+        android:onClick="doClick"
+        android:id="@+id/activity_my_yijian"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:layout_marginTop="@dimen/pading_1"
+        android:padding="@dimen/pading_10"
+        android:gravity="center_vertical"
+        android:drawableRight="@mipmap/jinru"
+        android:textColor="@color/text_color"
+        android:textSize="@dimen/size_text_14"
+        android:text="@string/yijianfankui"/>
+    <TextView
+        android:onClick="doClick"
+        android:id="@+id/activity_my_guanyuwomen"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:layout_marginTop="@dimen/pading_1"
+        android:padding="@dimen/pading_10"
+        android:gravity="center_vertical"
+        android:drawableRight="@mipmap/jinru"
+        android:textColor="@color/text_color"
+        android:textSize="@dimen/size_text_14"
+        android:text="@string/guanyuiwomen"/>
+    <TextView
+        android:onClick="doClick"
+        android:id="@+id/activity_my_tuichudenglu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:layout_marginTop="@dimen/pading_1"
+        android:padding="@dimen/pading_10"
+        android:gravity="center_vertical"
+        android:textColor="@color/red"
+        android:textSize="@dimen/size_text_14"
+        android:text="@string/tuichu"/>
+
+
+</LinearLayout>

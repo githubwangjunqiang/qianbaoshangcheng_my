@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/lltop_dialog"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:background="@color/white"
+        android:gravity="center"
+        android:padding="@dimen/pading_10"
+        android:text="@string/qingshuru"
+        android:textColor="@color/text_color"
+        android:textSize="@dimen/size_text_14" />
+<TextView
+    android:layout_width="match_parent"
+    android:background="@color/background"
+    android:layout_height="@dimen/pading_0.5" />
+    <EditText
+        android:id="@+id/dialog_addktvprice_etcontent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:gravity="top"
+        android:hint="请输入ktvprice"
+        android:inputType="textMultiLine|numberDecimal"
+        android:lineSpacingExtra="@dimen/pading_4"
+        android:maxLength="20"
+        android:minHeight="@dimen/pading_140"
+        android:padding="@dimen/pading_10"
+        android:textColor="@color/text_color"
+        android:textColorHint="@color/text_color_alp"
+        android:textSize="@dimen/size_text_13" />
+    <TextView
+        android:layout_width="match_parent"
+        android:background="@color/background"
+        android:layout_height="@dimen/pading_0.5" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:padding="@dimen/pading_10">
+
+        <TextView
+            android:id="@+id/dialog_addktvpricetvok"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/yuan_rbfabu_shenqing"
+            android:gravity="center"
+            android:paddingBottom="@dimen/pading_6"
+            android:paddingTop="@dimen/pading_6"
+            android:text="@string/ok"
+            android:textColor="@color/white"
+            android:textSize="@dimen/size_text_12" />
+
+        <TextView
+            android:id="@+id/dialog_addktvprice_tvover"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/pading_10"
+            android:layout_weight="1"
+            android:background="@drawable/yuan_rbfabu"
+            android:gravity="center"
+            android:paddingBottom="@dimen/pading_6"
+            android:paddingTop="@dimen/pading_6"
+            android:text="@string/over"
+            android:textColor="@color/text_app_color_p"
+            android:textSize="@dimen/size_text_12" />
+    </LinearLayout>
+</LinearLayout>

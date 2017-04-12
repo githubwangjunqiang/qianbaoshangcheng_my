@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/toast_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/yuan_toast"
+        android:gravity="center"
+        android:paddingBottom="@dimen/pading_8"
+        android:paddingLeft="@dimen/pading_20"
+        android:paddingRight="@dimen/pading_20"
+        android:paddingTop="@dimen/pading_8"
+        android:text="你好啊"
+        android:textColor="@color/white"
+        android:textSize="@dimen/size_text_14">
+
+    </TextView>
+</LinearLayout>

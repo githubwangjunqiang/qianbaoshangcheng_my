@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/background"
+    android:orientation="vertical">
+
+    <include layout="@layout/top" />
+
+    <com.baoyz.widget.PullRefreshLayout
+        android:id="@+id/activity_zhuye_bianji_layout"
+        android:layout_width="match_parent"
+        app:refreshType="water_drop"
+        android:layout_height="match_parent">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:background="@color/white"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/pading_10"
+                android:paddingRight="@dimen/pading_10">
+
+                <TextView
+                    android:id="@+id/fragment_home_tvimage"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerVertical="true"
+                    android:gravity="center_vertical"
+                    android:text="修改头像"
+                    android:textColor="@color/text_color"
+                    android:textSize="@dimen/size_text_12" />
+
+                <ImageView
+                    android:id="@+id/fragment_home_ivimage"
+                    android:layout_width="@dimen/pading_60"
+                    android:layout_height="@dimen/pading_60"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/pading_10"
+                    android:scaleType="centerCrop"
+                    android:src="@mipmap/t1" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/fragment_home_tvname_ll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/pading_10"
+                android:background="@color/white"
+                android:orientation="horizontal"
+                android:paddingRight="@dimen/pading_10">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:gravity="center_vertical"
+                    android:padding="@dimen/pading_10"
+                    android:text="@string/storname"
+                    android:textColor="@color/text_color"
+                    android:textSize="@dimen/size_text_12" />
+
+                <EditText
+                    android:id="@+id/fragment_home_etname"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:gravity="right|center_vertical"
+                    android:hint="@string/storname"
+                    android:imeOptions="actionNext"
+                    android:padding="@dimen/pading_10"
+                    android:textColor="@color/text_color"
+                    android:textColorHint="@color/text_color_alp"
+                    android:textSize="@dimen/size_text_12" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/pading_10"
+                android:background="@color/white"
+                android:orientation="horizontal"
+                android:paddingRight="@dimen/pading_10">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:gravity="center_vertical"
+                    android:padding="@dimen/pading_10"
+                    android:text="@string/tianxiedizhi"
+                    android:textColor="@color/text_color"
+                    android:textSize="@dimen/size_text_12" />
+
+                <EditText
+                    android:id="@+id/fragment_home_etadress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:gravity="right|center_vertical"
+                    android:hint="@string/tianxiedizhi"
+                    android:imeOptions="actionNext"
+                    android:padding="@dimen/pading_10"
+                    android:textColor="@color/text_color"
+                    android:textColorHint="@color/text_color_alp"
+                    android:textSize="@dimen/size_text_12" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/pading_10"
+                android:background="@color/white"
+                android:orientation="horizontal"
+                android:paddingRight="@dimen/pading_10">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:gravity="center_vertical"
+                    android:padding="@dimen/pading_10"
+                    android:text="@string/lianxirenxingming"
+                    android:textColor="@color/text_color"
+                    android:textSize="@dimen/size_text_12" />
+
+                <EditText
+                    android:id="@+id/fragment_home_etusername"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:gravity="right|center_vertical"
+                    android:hint="@string/lianxirenxingming"
+                    android:imeOptions="actionNext"
+                    android:padding="@dimen/pading_10"
+                    android:textColor="@color/text_color"
+                    android:textColorHint="@color/text_color_alp"
+                    android:textSize="@dimen/size_text_12" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/pading_10"
+                android:background="@color/white"
+                android:orientation="horizontal"
+                android:paddingRight="@dimen/pading_10">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:gravity="center_vertical"
+                    android:padding="@dimen/pading_10"
+                    android:text="@string/lianxirendianhua"
+                    android:textColor="@color/text_color"
+                    android:textSize="@dimen/size_text_12" />
+
+                <EditText
+                    android:id="@+id/fragment_home_etphone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:gravity="right|center_vertical"
+                    android:hint="@string/lianxirendianhua"
+                    android:imeOptions="actionNext"
+                    android:inputType="phone"
+                    android:padding="@dimen/pading_10"
+                    android:textColor="@color/text_color"
+                    android:textColorHint="@color/text_color_alp"
+                    android:textSize="@dimen/size_text_12" />
+            </LinearLayout>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/activity_binaji_zhuye_ok"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/app_color"
+                    android:gravity="center"
+                    android:padding="@dimen/pading_10"
+                    android:text="@string/ok"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/size_text_12" />
+            </RelativeLayout>
+        </LinearLayout>
+    </com.baoyz.widget.PullRefreshLayout>
+</LinearLayout>

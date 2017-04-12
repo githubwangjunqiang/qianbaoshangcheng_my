@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/top_height"
+        android:background="@color/app_color">
+
+        <ImageView
+            android:id="@+id/top_ivback"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:paddingLeft="@dimen/pading_16"
+            android:paddingRight="@dimen/pading_16"
+            android:src="@mipmap/fanhui" />
+
+        <TextView
+            android:id="@+id/top_tvtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="注册"
+            android:textColor="@color/white"
+            android:textSize="@dimen/size_text_14" />
+
+        <TextView
+            android:id="@+id/top_tvtitle_ri"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:paddingRight="@dimen/pading_10"
+            android:textColor="@color/white"
+            android:gravity="center"
+            android:paddingLeft="@dimen/pading_10"
+            android:textSize="@dimen/size_text_12" />
+    </RelativeLayout>
+</LinearLayout>

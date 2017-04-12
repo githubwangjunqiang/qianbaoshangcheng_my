@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "D:\\android_studio\\qianbaoshangcheng\\libzxing-master\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\fanhui.png",
+        "source": "D:\\android_studio\\qianbaoshangcheng\\libzxing-master\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\fanhui.png"
+    },
+    {
+        "merged": "D:\\android_studio\\qianbaoshangcheng\\libzxing-master\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\qr_code_bg.9.png",
+        "source": "D:\\android_studio\\qianbaoshangcheng\\libzxing-master\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\qr_code_bg.9.png"
+    },
+    {
+        "merged": "D:\\android_studio\\qianbaoshangcheng\\libzxing-master\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\shadow.png",
+        "source": "D:\\android_studio\\qianbaoshangcheng\\libzxing-master\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\shadow.png"
+    },
+    {
+        "merged": "D:\\android_studio\\qianbaoshangcheng\\libzxing-master\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\scan_line.png",
+        "source": "D:\\android_studio\\qianbaoshangcheng\\libzxing-master\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\scan_line.png"
+    }
+]

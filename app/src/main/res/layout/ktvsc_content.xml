@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:zhy="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:padding="@dimen/pading_10"
+            android:text="@string/fangxingxuzna"
+            android:textColor="@color/text_color_alp"
+            android:textSize="@dimen/size_text_13" />
+
+        <TextView
+            android:id="@+id/ktv_tvfangxing"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/pading_10"
+            android:background="@color/blue_tian"
+            android:paddingBottom="@dimen/pading_4"
+            android:paddingLeft="@dimen/pading_10"
+            android:paddingRight="@dimen/pading_10"
+            android:paddingTop="@dimen/pading_4"
+            android:text="@string/addleixing"
+            android:textColor="@color/white"
+            android:textSize="@dimen/size_text_13" />
+
+        <TextView
+            android:id="@+id/ktv_tvdeletefagnxing"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/pading_10"
+            android:background="@drawable/delete"
+            android:paddingBottom="@dimen/pading_2"
+            android:paddingLeft="@dimen/pading_10"
+            android:paddingRight="@dimen/pading_10"
+            android:paddingTop="@dimen/pading_2"
+            android:text="@string/deletefangzxing"
+            android:textColor="@color/text_wr_se"
+            android:textSize="@dimen/size_text_12" />
+    </LinearLayout>
+
+    <com.zhy.view.flowlayout.TagFlowLayout
+        android:id="@+id/ktvxuanze_adapter0"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/pading_4"
+        android:paddingLeft="@dimen/pading_10"
+        android:paddingRight="@dimen/pading_10"
+        android:paddingTop="@dimen/pading_4"
+        zhy:auto_select_effect="true"
+        zhy:max_select="1" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:padding="@dimen/pading_10"
+            android:text="@string/timexuanze"
+            android:textColor="@color/text_color_alp"
+            android:textSize="@dimen/size_text_13" />
+
+        <TextView
+            android:id="@+id/ktv_tvtime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/pading_10"
+            android:background="@color/blue_tian"
+            android:paddingBottom="@dimen/pading_4"
+            android:paddingLeft="@dimen/pading_10"
+            android:paddingRight="@dimen/pading_10"
+            android:paddingTop="@dimen/pading_4"
+            android:text="@string/addtime"
+            android:textColor="@color/white"
+            android:textSize="@dimen/size_text_13" />
+
+        <TextView
+            android:id="@+id/ktv_tvdeletetime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/pading_10"
+            android:background="@drawable/delete"
+            android:paddingBottom="@dimen/pading_2"
+            android:paddingLeft="@dimen/pading_10"
+            android:paddingRight="@dimen/pading_10"
+            android:paddingTop="@dimen/pading_2"
+            android:text="@string/deletefangzxing"
+            android:textColor="@color/text_wr_se"
+            android:textSize="@dimen/size_text_12" />
+    </LinearLayout>
+
+    <com.zhy.view.flowlayout.TagFlowLayout
+        android:id="@+id/ktvxuanze_adapter1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/pading_4"
+        android:paddingLeft="@dimen/pading_10"
+        android:paddingRight="@dimen/pading_10"
+        android:paddingTop="@dimen/pading_4"
+        zhy:auto_select_effect="true"
+        zhy:max_select="1" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/pading_10"
+            android:text="@string/qingshuruxuanzeshijian"
+            android:textColor="@color/text_color_alp"
+            android:textSize="@dimen/size_text_13" />
+
+        <com.yunyouzhiyuan.qianbaoshangcheng.ui.MyGridView
+            android:layout_width="match_parent"
+            android:id="@+id/ktv_timecount_gv"
+            android:layout_height="wrap_content"
+            android:numColumns="7"
+            android:horizontalSpacing="@dimen/pading_6"
+            android:padding="@dimen/pading_10"
+            android:verticalSpacing="@dimen/pading_6" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:padding="@dimen/pading_10"
+            android:text="@string/rixuanze"
+            android:textColor="@color/text_color_alp"
+            android:textSize="@dimen/size_text_13" />
+
+        <TextView
+            android:id="@+id/ktv_tvaddriqi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/pading_10"
+            android:background="@color/blue_tian"
+            android:paddingBottom="@dimen/pading_4"
+            android:paddingLeft="@dimen/pading_10"
+            android:paddingRight="@dimen/pading_10"
+            android:paddingTop="@dimen/pading_4"
+            android:text="@string/addriqi"
+            android:textColor="@color/white"
+            android:textSize="@dimen/size_text_13" />
+    </LinearLayout>
+
+
+    <GridView
+        android:id="@+id/ktvxuanze_adapter2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:numColumns="7"
+        android:paddingBottom="@dimen/pading_4"
+        android:paddingLeft="@dimen/pading_10"
+        android:paddingRight="@dimen/pading_10"
+        android:paddingTop="@dimen/pading_4" />
+
+</LinearLayout>

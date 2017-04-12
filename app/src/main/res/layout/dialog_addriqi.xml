@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/pading_20"
+    android:background="@drawable/yuan_dialog"
+    android:orientation="vertical"
+    android:padding="@dimen/pading_20">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:paddingBottom="@dimen/pading_10"
+        android:text="@string/addriqi"
+        android:textColor="@color/text_color"
+        android:textSize="@dimen/size_text_14" />
+
+    <RadioGroup
+        android:id="@+id/dialog_addriqi_rg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/pading_10">
+
+
+        <RadioButton
+            android:id="@+id/dialog_addriqi_c0"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/pading_10"
+            android:text="@string/zhouri"
+            android:textColor="@color/text_color"
+            android:textSize="@dimen/size_text_13" />
+
+        <RadioButton
+            android:id="@+id/dialog_addriqi_c1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/pading_10"
+            android:text="@string/zhouyi"
+            android:textColor="@color/text_color"
+            android:textSize="@dimen/size_text_13" />
+
+        <RadioButton
+            android:id="@+id/dialog_addriqi_c2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/pading_10"
+            android:text="@string/zhouer"
+            android:textColor="@color/text_color"
+            android:textSize="@dimen/size_text_13" />
+
+        <RadioButton
+            android:id="@+id/dialog_addriqi_c3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/pading_10"
+            android:text="@string/zhousan"
+            android:textColor="@color/text_color"
+            android:textSize="@dimen/size_text_13" />
+
+        <RadioButton
+            android:id="@+id/dialog_addriqi_c4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/pading_10"
+            android:text="@string/zhousi"
+            android:textColor="@color/text_color"
+            android:textSize="@dimen/size_text_13" />
+
+        <RadioButton
+            android:id="@+id/dialog_addriqi_c5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/pading_10"
+            android:text="@string/zhouwu"
+            android:textColor="@color/text_color"
+            android:textSize="@dimen/size_text_13" />
+
+        <RadioButton
+            android:id="@+id/dialog_addriqi_c6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/pading_10"
+            android:text="@string/zhouliu"
+            android:textColor="@color/text_color"
+            android:textSize="@dimen/size_text_13" />
+    </RadioGroup>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="@dimen/pading_10">
+
+        <TextView
+            android:id="@+id/dialog_addriqi_tvok"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/yuan_rbfabu_shenqing"
+            android:gravity="center"
+            android:paddingBottom="@dimen/pading_6"
+            android:paddingTop="@dimen/pading_6"
+            android:text="@string/ok"
+            android:textColor="@color/white"
+            android:textSize="@dimen/size_text_12" />
+
+        <TextView
+            android:id="@+id/dialog_addriqi_tvover"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/pading_10"
+            android:layout_weight="1"
+            android:background="@drawable/yuan_rbfabu"
+            android:gravity="center"
+            android:paddingBottom="@dimen/pading_6"
+            android:paddingTop="@dimen/pading_6"
+            android:text="@string/over"
+            android:textColor="@color/text_app_color_p"
+            android:textSize="@dimen/size_text_12" />
+    </LinearLayout>
+</LinearLayout>

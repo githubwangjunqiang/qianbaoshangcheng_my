@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:paddingBottom="@dimen/pading_4"
+    android:paddingLeft="@dimen/pading_6"
+    android:paddingRight="@dimen/pading_10"
+    android:paddingTop="@dimen/pading_4">
+
+    <com.yunyouzhiyuan.qianbaoshangcheng.ui.SquareImageView
+        android:id="@+id/itme_activity_shenqing_listview_ivimage"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:src="@drawable/t2" />
+
+    <TextView
+        android:id="@+id/itme_activity_shenqing_listview_tvtime"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="2.5"
+        android:padding="@dimen/pading_10"
+        android:text="00.00.00.00"
+        android:textColor="@color/text_color"
+        android:textSize="@dimen/size_text_12" />
+
+    <TextView
+        android:id="@+id/itme_activity_shenqing_listview_tvwanshan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/yuan_jilu_wanshan"
+        android:paddingBottom="@dimen/pading_4"
+        android:paddingLeft="@dimen/pading_16"
+        android:paddingRight="@dimen/pading_16"
+        android:paddingTop="@dimen/pading_4"
+        android:text="@string/lijiwanshan"
+        android:textColor="@color/app_write_color"
+        android:textSize="@dimen/size_text_12" />
+</LinearLayout>
