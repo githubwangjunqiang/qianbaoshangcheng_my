@@ -246,6 +246,9 @@
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden"/>
         <!-- 我的消息 -->
+        <activity
+            android:name=".activity.MyMesageActivity"
+            android:screenOrientation="portrait" />
         <!-- 消息详情 -->
         <activity
             android:name=".activity.MyMsginfoActivity"
