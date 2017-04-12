@@ -65,6 +65,9 @@ public class Dialog_SubmitOpinion extends BaseDiaLog {
         wlp.width = WindowManager.LayoutParams.MATCH_PARENT;
         wlp.height = WindowManager.LayoutParams.WRAP_CONTENT;
         wlp.gravity = Gravity.BOTTOM;
+
+
+
         window.setAttributes(wlp);
         window.setWindowAnimations(R.style.dialogWindowAnim);
     }
