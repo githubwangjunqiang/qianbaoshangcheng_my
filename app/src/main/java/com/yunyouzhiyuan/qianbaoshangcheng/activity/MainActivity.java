@@ -133,7 +133,7 @@ public class MainActivity extends BaseActivity {
                         new Dialog_Dingdan(MainActivity.this).show();
                         break;
                     case 2: //点击消息
-                        startActivity(new Intent(MainActivity.this, MyMesageActivity.class));
+                        startActivity(new Intent(MainActivity.this,MyMsginfoActivity.class));
                         overridePendingTransition(R.anim.alpha_scale_in0, R.anim.alpha_scale_out0);
                         break;
                     case 3: // 个人中心
