@@ -56,7 +56,7 @@
 
         <meta-data
             android:name="com.baidu.lbsapi.API_KEY"
-            android:value="Beglc1fyYs5nUkKbK887uB6cdZWUzO4U" />
+            android:value="B075hj2UFLlWxl3ISjUVv4Vfx0DcqQPs" />
         //key:开发者申请的Key
         <!-- 百度地图结束 -->
         <!-- 极光推送 -->
