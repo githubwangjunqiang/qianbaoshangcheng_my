@@ -500,6 +500,11 @@ public class FoodFabuActivity extends BaseActivity {
                     public void onSucceed(Object object) {
                         Too.oo(object);
                         dismissLooding();
+                        if (SpService.getSP().getStorId().equals("1")) {//如果是美食
+                            Intent intent = new Intent(FoodFabuActivity.this, HuoDongTuanGouActivity.class);
+                            intent.putExtra("istuangou", true);
+                            startActivity(intent);
+                        }
                         finish();
                     }
 

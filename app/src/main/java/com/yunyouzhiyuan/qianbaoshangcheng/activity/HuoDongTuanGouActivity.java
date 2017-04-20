@@ -3,6 +3,7 @@ package com.yunyouzhiyuan.qianbaoshangcheng.activity;
 import android.app.DatePickerDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.AdapterView;
@@ -52,6 +53,7 @@ public class HuoDongTuanGouActivity extends BaseActivity {
     private String cat_id1;
     private long currentInMillis;
     private String good_name;
+    private boolean istuangou = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -111,6 +113,8 @@ public class HuoDongTuanGouActivity extends BaseActivity {
      * 初始化数据
      */
     private void init() {
+        istuangou = getIntent().getBooleanExtra("istuangou", false);
+        showCookDialog();
         topTvtitle.setText("发布活动");
         model = new HuoDongModel();
         Calendar calendar = Calendar.getInstance();
@@ -118,6 +122,28 @@ public class HuoDongTuanGouActivity extends BaseActivity {
         currentMonth = calendar.get(Calendar.MONTH);
         currentDayOfMonth = calendar.get(Calendar.DAY_OF_MONTH);
         currentInMillis = calendar.getTimeInMillis();
+    }
+
+    /**
+     * 显示 警告用户一定要发布 团购
+     */
+    private void showCookDialog() {
+        if (istuangou) {
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setTitle("黔宝商城提醒您：");
+            builder.setMessage("您是美食店家，发布商品成功后，一定要及时将此商品参加团购，" +
+                    "否则可能不能及时收到订单，为了您的方便着想，请您务必填写完毕进行提交，谢谢您的合作！");
+            builder.setPositiveButton("明白，确定去提交", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    dialog.dismiss();
+                }
+            });
+            builder.setCancelable(false);
+            AlertDialog dialog = builder.create();
+            dialog.setCanceledOnTouchOutside(false);
+            dialog.show();
+        }
     }
 
     /**
@@ -149,7 +175,11 @@ public class HuoDongTuanGouActivity extends BaseActivity {
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.top_ivback://返回
-                finish();
+                if(istuangou){
+                    Too.oo("请您务必提交团购");
+                }else{
+                    finish();
+                }
                 break;
             case R.id.btnhuodongok://提交
                 subMit();
@@ -160,6 +190,15 @@ public class HuoDongTuanGouActivity extends BaseActivity {
             case R.id.food_tvendtime://结束时间
                 showTimeDialog((TextView) view, false);
                 break;
+        }
+    }
+
+    @Override
+    public void onBackPressed() {
+        if(istuangou){
+            Too.oo("请您务必提交团购信息");
+        }else{
+            super.onBackPressed();
         }
     }
 

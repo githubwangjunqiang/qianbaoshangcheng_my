@@ -472,6 +472,8 @@ public class FabuKTVHoTelActivity extends BaseActivity {
                         if (!beanList.isEmpty()) {
                             beanList.get(index).getSpecItemList().add(new KTVList.DataBean.SpecItemListBean(id, name));
                             setFlowAdapterXing();
+                        } else {
+                            setView();
                         }
                     }
 
@@ -485,7 +487,10 @@ public class FabuKTVHoTelActivity extends BaseActivity {
                 new Dialog_addTime(this, new Dialog_addTime.Callback() {
                     @Override
                     public void onClick(String name, String id) {
-                        Too.oo(name);
+                        if (beanList.isEmpty()) {
+                            setView();
+                            return;
+                        }
                         beanList.get(index).getSpecItemList().
                                 add(new KTVList.DataBean.SpecItemListBean(id, name));
                         setFlowAdapterTime();
@@ -497,6 +502,10 @@ public class FabuKTVHoTelActivity extends BaseActivity {
 
                     @Override
                     public void onClick(String name, String id) {
+                        if (beanList.isEmpty()) {
+                            setView();
+                            return;
+                        }
                         beanList.get(index).getSpecItemList()
                                 .add(new KTVList.DataBean.SpecItemListBean(id, name));
                         setFlowAdapterRiqi();
@@ -830,7 +839,7 @@ public class FabuKTVHoTelActivity extends BaseActivity {
             Too.oo("请选择日期");
             return;
         }
-        if (timeCountAdapter == null ) {
+        if (timeCountAdapter == null) {
             Too.oo("请选择购买时间限制");
             return;
         }

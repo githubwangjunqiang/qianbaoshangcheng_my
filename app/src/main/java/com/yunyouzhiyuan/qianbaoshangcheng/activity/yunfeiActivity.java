@@ -62,15 +62,21 @@ public class yunfeiActivity extends BaseActivity {
         model.get_send_price(SpService.getSP().getStorId(), new IModel.AsyncCallBack() {
             @Override
             public void onSucceed(Object object) {
-                List<Freight.DataBean> object1 = (List<Freight.DataBean>) object;
-                if (Double.parseDouble(object1.get(0).getSend_price()) > 0) {
-                    yunfeiEtprice.setText(object1.get(0).getSend_price());
-                    yunfeiEtprice.setSelection(object1.get(0).getSend_price().length());
+                try {
+                    List<Freight.DataBean> object1 = (List<Freight.DataBean>) object;
+                    if (Double.parseDouble(object1.get(0).getSend_price()) > 0) {
+                        yunfeiEtprice.setText(object1.get(0).getSend_price());
+                        yunfeiEtprice.setSelection(object1.get(0).getSend_price().length());
+                    }
+                    if (Double.parseDouble(object1.get(0).getShipping_price()) > 0) {
+                        yunfeiEtqishiprice.setText(object1.get(0).getShipping_price());
+                        yunfeiEtqishiprice.setSelection(object1.get(0).getShipping_price().length());
+                    }
+
+                } catch (RuntimeException e) {
+                    e.printStackTrace();
                 }
-                if (Double.parseDouble(object1.get(0).getShipping_price()) > 0) {
-                    yunfeiEtqishiprice.setText(object1.get(0).getShipping_price());
-                    yunfeiEtqishiprice.setSelection(object1.get(0).getShipping_price().length());
-                }
+
                 freightLayout.setRefreshing(false);
             }
 

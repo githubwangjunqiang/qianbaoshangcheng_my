@@ -130,7 +130,7 @@ public class Dialog_Fabu extends Dialog {
                         String scidview = SpService.getSP().getScid();
                         if (TextUtils.isEmpty(scidview)) {//
                             Too.oo("店铺类型 未获取到，请重启应用亲");
-                        } else if (TextUtils.equals("4", scidview)
+                        } else if (TextUtils.equals("4", scidview)//ktv 或者 外卖
                                 || TextUtils.equals("2", scidview)) {
                             Too.oo("您经营的店铺类型不是此类型");
                         } else {
@@ -153,7 +153,9 @@ public class Dialog_Fabu extends Dialog {
                             Too.oo("店铺类型 未获取到，请重启应用亲");
                         } else if (TextUtils.equals("2", scid3)) {//是外卖
                             Too.oo("您经营的是外卖类型，直接发布外卖");
-                        } else {
+                        } else if(TextUtils.equals("1", scid3)){//美食
+                            Too.oo("您经营的是美食类型，直接发布团购吧");
+                        }else{
                             loadIsChecked(5);
                         }
                         break;
@@ -235,12 +237,19 @@ public class Dialog_Fabu extends Dialog {
         new FreightModel().get_send_price(SpService.getSP().getStorId(), new IModel.AsyncCallBack() {
             @Override
             public void onSucceed(Object object) {
-                List<Freight.DataBean> list = (List<Freight.DataBean>) object;
-                if (Double.parseDouble(list.get(0).getSend_price()) > 0) {
-                    loadIsChecked(6);
-                } else {
+                try {
+                    List<Freight.DataBean> list = (List<Freight.DataBean>) object;
+                    if (Double.parseDouble(list.get(0).getSend_price()) > 0) {
+                        loadIsChecked(6);
+                    } else {
+                        Too.oo("请先去设置好配送费用相关，发布外卖下/设置运费");
+                    }
+                } catch (RuntimeException e) {
+                    e.printStackTrace();
                     Too.oo("请先去设置好配送费用相关，发布外卖下/设置运费");
+                    loadingDialog.dismiss();
                 }
+
                 loadingDialog.dismiss();
             }
 

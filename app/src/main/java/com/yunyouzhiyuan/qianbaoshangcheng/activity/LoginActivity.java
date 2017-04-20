@@ -235,7 +235,6 @@ public class LoginActivity extends BaseActivity {
             }
             LogUtils.d("定位结果" + sb.toString());
 
-            Too.oo(location.getLocationDescribe());
             SpService.getSP().saveLocation(location.getLatitude() + "", location.getLongitude() + "");
         }
 
