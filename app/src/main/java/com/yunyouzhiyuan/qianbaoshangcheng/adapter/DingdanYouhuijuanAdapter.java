@@ -14,6 +14,7 @@ import com.yunyouzhiyuan.qianbaoshangcheng.R;
 import com.yunyouzhiyuan.qianbaoshangcheng.activity.PingjiaActivity;
 import com.yunyouzhiyuan.qianbaoshangcheng.entity.DingDan;
 import com.yunyouzhiyuan.qianbaoshangcheng.entity.HttpUrl;
+import com.yunyouzhiyuan.qianbaoshangcheng.uitl.StringReplaceUtil;
 
 import org.xutils.common.util.DensityUtil;
 import org.xutils.image.ImageOptions;
@@ -51,7 +52,8 @@ public class DingdanYouhuijuanAdapter extends MyAdapter<DingDan.DataBean> {
                 new ImageOptions.Builder().setFadeIn(true).setRadius(DensityUtil.dip2px(4))
                         .setFailureDrawableId(R.drawable.t2).setImageScaleType(ImageView.ScaleType.FIT_XY).build());
         holder.tvname.setText(getData().get(position).getGoods_name());
-        holder.tvUser.setText("用户电话：" + getData().get(position).getMobile());
+
+        holder.tvUser.setText("用户电话：" + StringReplaceUtil.idphoneReplaceWithStar(getData().get(position).getMobile()));
         holder.tvtime.setText("有效期限：" + getData().get(position).getStart_time() + ""
                 + getData().get(position).getEnd_time());
         holder.tvprice.setText("￥\n" + getData().get(position).getGoods_price());

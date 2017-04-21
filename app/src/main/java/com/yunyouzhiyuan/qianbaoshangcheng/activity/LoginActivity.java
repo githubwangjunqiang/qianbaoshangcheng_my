@@ -112,6 +112,11 @@ public class LoginActivity extends BaseActivity {
             return;
         }
         loodingShow();
+
+        LogUtils.d("登陆参数getRegistrationID=" + JPushInterface.getRegistrationID(MyApplication.getContext()));
+        LogUtils.d("登陆参数getUdid=" + JPushInterface.getUdid(MyApplication.getContext()));
+
+
         model.login(phone, pas, JPushInterface.getRegistrationID(MyApplication.getContext()),
                 new IModel.AsyncCallBack() {
                     @Override
@@ -141,7 +146,8 @@ public class LoginActivity extends BaseActivity {
 
                     @Override
                     public void onFailure(String string) {
-
+                        Too.oo(string);
+                        dismissLooding();
                     }
                 });
 

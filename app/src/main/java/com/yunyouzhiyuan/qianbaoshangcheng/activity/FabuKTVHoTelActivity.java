@@ -21,6 +21,7 @@ import android.widget.ScrollView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.baoyz.widget.PullRefreshLayout;
 import com.google.gson.Gson;
 import com.yunyouzhiyuan.qianbaoshangcheng.R;
 import com.yunyouzhiyuan.qianbaoshangcheng.adapter.FlowAdapter;
@@ -111,6 +112,8 @@ public class FabuKTVHoTelActivity extends BaseActivity {
     TextView ktvTvdeletetime;
     @Bind(R.id.food_scrollview)
     ScrollView scrollView;
+    @Bind(R.id.fabuktv_layout)
+    PullRefreshLayout refreshLayout;
     private FlowAdapter flowAdapter0, flowAdapter1;
     private RiqiAdapter adapter;
     private List<ShopLeixing.DataBean> list = new ArrayList<>();
@@ -150,6 +153,19 @@ public class FabuKTVHoTelActivity extends BaseActivity {
                 return false;
             }
         });
+        setListener();
+    }
+
+    /**
+     * 适配器
+     */
+    private void setListener() {
+        refreshLayout.setOnRefreshListener(new PullRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                setView();
+            }
+        });
     }
 
     /**
@@ -173,12 +189,12 @@ public class FabuKTVHoTelActivity extends BaseActivity {
 
             @Override
             public void onError(Object object) {
-
+                Too.oo(object);
             }
 
             @Override
             public void onFailure(String string) {
-
+                Too.oo(string);
             }
         });
     }
@@ -559,6 +575,7 @@ public class FabuKTVHoTelActivity extends BaseActivity {
                         setSp2();
                         break;
                 }
+                refreshLayout.setRefreshing(false);
                 dismissLooding();
             }
 
@@ -590,13 +607,15 @@ public class FabuKTVHoTelActivity extends BaseActivity {
                         cat_id3 = null;
                         break;
                 }
+                refreshLayout.setRefreshing(false);
                 Too.oo(object);
                 dismissLooding();
             }
 
             @Override
             public void onFailure(String string) {
-
+                refreshLayout.setRefreshing(false);
+                dismissLooding();
             }
         });
     }

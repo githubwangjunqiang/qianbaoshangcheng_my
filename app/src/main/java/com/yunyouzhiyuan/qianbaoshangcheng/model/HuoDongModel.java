@@ -43,12 +43,14 @@ public class HuoDongModel extends IModel {
     }
 
     /**
+     * 36、商家端发布团购
      * add_group_buying_Goods
      * 传入：store_id （必传）  goods_id产品id   title标题   start_time开始时间   end_time结束时间
      * price团购价格   goods_num 参团数量    goods_name    type(1 新增     2 更新 )
      */
     public void submit(String store_id, String goods_id, String title, String start_time, String end_time
-            , String price, String goods_num, String goodsname, int type, final AsyncCallBack callBack) {
+            , String price, String goods_num, String goodsname, int type,
+                       final AsyncCallBack callBack) {
         MyOkHttpClent.newBuilder().url(HttpUrl.add_group_buying_Goods).post().addParam("store_id", store_id)
                 .addParam("goods_id", goods_id).addParam("title", title).addParam("start_time", start_time)
                 .addParam("end_time", end_time).addParam("price", price).addParam("goods_num", goods_num)

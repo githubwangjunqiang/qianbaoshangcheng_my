@@ -148,8 +148,7 @@ public class LoginModel extends IModel {
         params.addBodyParameter("password", password);
         params.addBodyParameter("device_token", divtoken);
 
-        Too.oo("登陆参数getRegistrationID=" + JPushInterface.getRegistrationID(MyApplication.getContext()));
-        Too.oo("登陆参数getUdid=" + JPushInterface.getUdid(MyApplication.getContext()));
+
 
 
         x.http().post(params, new Callback.CommonCallback<String>() {

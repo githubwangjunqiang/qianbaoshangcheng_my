@@ -17,6 +17,7 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.baoyz.widget.PullRefreshLayout;
 import com.yunyouzhiyuan.qianbaoshangcheng.R;
 import com.yunyouzhiyuan.qianbaoshangcheng.adapter.SpannerAdapterShop;
 import com.yunyouzhiyuan.qianbaoshangcheng.entity.HttpUrl;
@@ -77,6 +78,8 @@ public class FoodFabuActivity extends BaseActivity {
     SquareImageView foodIvimage;
     @Bind(R.id.food_btnok)
     Button foodBtnok;
+    @Bind(R.id.fabushop_layout)
+    PullRefreshLayout refreshLayout;
     private SpannerAdapterShop spannerAdapterShop, spannerAdapterShop1, spannerAdapterShop2;
     private DiaLogaddImage dialogaddimage;//上传照片对话框
     private File file = SDisTrue.hasSdcard() ? new File(Environment.getExternalStorageDirectory(), "qianbaoshangcheng_image.jpg") : null;
@@ -140,6 +143,7 @@ public class FoodFabuActivity extends BaseActivity {
                         setSp2();
                         break;
                 }
+                refreshLayout.setRefreshing(false);
                 dismissLooding();
             }
 
@@ -172,6 +176,7 @@ public class FoodFabuActivity extends BaseActivity {
                         break;
                 }
                 Too.oo(object);
+                refreshLayout.setRefreshing(false);
                 dismissLooding();
             }
 
@@ -186,6 +191,12 @@ public class FoodFabuActivity extends BaseActivity {
      * 监听器
      */
     private void setListener() {
+        refreshLayout.setOnRefreshListener(new PullRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                getData(0, "0");
+            }
+        });
     }
 
     /**
@@ -500,7 +511,7 @@ public class FoodFabuActivity extends BaseActivity {
                     public void onSucceed(Object object) {
                         Too.oo(object);
                         dismissLooding();
-                        if (SpService.getSP().getStorId().equals("1")) {//如果是美食
+                        if (SpService.getSP().getScid().equals("1")) {//如果是美食
                             Intent intent = new Intent(FoodFabuActivity.this, HuoDongTuanGouActivity.class);
                             intent.putExtra("istuangou", true);
                             startActivity(intent);
