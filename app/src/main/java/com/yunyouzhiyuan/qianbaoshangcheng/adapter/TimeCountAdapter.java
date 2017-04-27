@@ -26,6 +26,14 @@ public class TimeCountAdapter extends MyAdapter<String> {
         }
     }
 
+    public void setMap(List<String> data) {
+        this.map.clear();
+        for (int i = 0; i < getData().size(); i++) {
+            map.put(i, false);
+        }
+        notifyDataSetChanged();
+    }
+
     public String getAttrValue() {
         for (ArrayMap.Entry<Integer, Boolean> entity : map.entrySet()) {
             LogUtils.d("Entry:key=" + entity.getKey() + "value=" + entity.getValue());

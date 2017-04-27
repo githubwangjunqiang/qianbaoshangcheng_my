@@ -28,7 +28,8 @@ public class StorGuanliModel extends IModel {
      */
     public void getdata(String store_id, int page, final AsyncCallBack callBack) {
         LogUtils.d("商家端获取店铺商品信息列表="+store_id+"/page="+page);
-        MyOkHttpClent.newBuilder().url(HttpUrl.gets_store_goods_lists).post().addParam("page", page).addParam("store_id", store_id)
+        MyOkHttpClent.newBuilder().url(HttpUrl.gets_store_goods_lists).post().addParam("page", page)
+                .addParam("store_id", store_id)
                 .build().enqueue(new BaseCallback.ComonCallback<StorList>() {
             @Override
             protected void onSuccess(StorList storList) {

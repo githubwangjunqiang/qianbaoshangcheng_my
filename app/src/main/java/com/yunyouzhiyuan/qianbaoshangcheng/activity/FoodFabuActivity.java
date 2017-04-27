@@ -1,12 +1,9 @@
 package com.yunyouzhiyuan.qianbaoshangcheng.activity;
 
 import android.content.Intent;
-import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
-import android.os.Handler;
-import android.os.Message;
 import android.provider.MediaStore;
 import android.text.TextUtils;
 import android.view.KeyEvent;
@@ -18,6 +15,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.baoyz.widget.PullRefreshLayout;
+import com.yunyouzhiyuan.qianbaoshangcheng.MyApplication;
 import com.yunyouzhiyuan.qianbaoshangcheng.R;
 import com.yunyouzhiyuan.qianbaoshangcheng.adapter.SpannerAdapterShop;
 import com.yunyouzhiyuan.qianbaoshangcheng.entity.HttpUrl;
@@ -27,21 +25,18 @@ import com.yunyouzhiyuan.qianbaoshangcheng.model.IModel;
 import com.yunyouzhiyuan.qianbaoshangcheng.ui.SquareImageView;
 import com.yunyouzhiyuan.qianbaoshangcheng.ui.Too;
 import com.yunyouzhiyuan.qianbaoshangcheng.ui.dialog.DiaLogaddImage;
-import com.yunyouzhiyuan.qianbaoshangcheng.uitl.GetBitmap;
 import com.yunyouzhiyuan.qianbaoshangcheng.uitl.GetJsonRetcode;
 import com.yunyouzhiyuan.qianbaoshangcheng.uitl.LogUtils;
 import com.yunyouzhiyuan.qianbaoshangcheng.uitl.MyAnimtion;
-import com.yunyouzhiyuan.qianbaoshangcheng.uitl.PhotoUploadTask;
+import com.yunyouzhiyuan.qianbaoshangcheng.uitl.PhotoTask;
 import com.yunyouzhiyuan.qianbaoshangcheng.uitl.SDisTrue;
 import com.yunyouzhiyuan.qianbaoshangcheng.uitl.SpService;
 
-import org.xutils.common.task.AbsTask;
 import org.xutils.x;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -86,26 +81,12 @@ public class FoodFabuActivity extends BaseActivity {
     private ByteArrayOutputStream baos;
     private ByteArrayInputStream is;
     private String paths1;//图片地址
-    private Handler handler = new Handler() {
-        @Override
-        public void handleMessage(Message msg) {
-            super.handleMessage(msg);
-            if (msg.what == 152) {
-                String s = (String) msg.obj;
-                if (GetJsonRetcode.getRetcode(s) == 2000) {
-                    paths1 = (GetJsonRetcode.getname("data", s));
-                } else {
-                    Too.oo(GetJsonRetcode.getmsg(s));
-                }
-                dismissLooding();
-            }
-        }
-    };
     private FabuModel model;
     private List<ShopLeixing.DataBean> list = new ArrayList<>();
     private List<ShopLeixing.DataBean> list1 = new ArrayList<>();
     private List<ShopLeixing.DataBean> list2 = new ArrayList<>();
     private String cat_id1, cat_id2, cat_id3;
+    private PhotoTask data;
 
 
     @Override
@@ -331,51 +312,30 @@ public class FoodFabuActivity extends BaseActivity {
      * 上传图片
      */
     private void toOutImage(final Uri uri) {
-        loodingShow();
-        x.task().start(new AbsTask<Bitmap>() {
+        data = new PhotoTask(MyApplication.getContext(), HttpUrl.ADDIMAGE, new PhotoTask.PhotoCallback() {
             @Override
-            protected Bitmap doBackground() throws Throwable {
-                try {
-                    Bitmap bitmap = GetBitmap.getBitmapFormUri(FoodFabuActivity.this, uri);
-                    update(0, bitmap);
-                    // 字节数组输出流
-                    baos = new ByteArrayOutputStream();
-                    // 将Bitmap对象转化为字节数组输出流
-                    bitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos);
-                    // 获得字节流
-                    is = new ByteArrayInputStream(baos.toByteArray());
-                    baos.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
+            public void onPreExecute() {
+                loodingShow();
+                x.image().bind(foodIvimage, uri.getPath());
+            }
+
+            @Override
+            public void onSuccess(String s) {
+                if (GetJsonRetcode.getRetcode(s) == 2000) {
+                    paths1 = (GetJsonRetcode.getname("data", s));
+                } else {
+                    Too.oo(GetJsonRetcode.getmsg(s));
                 }
-                return null;
-            }
-
-            @Override
-            protected void onUpdate(int flag, Object... args) {
-                super.onUpdate(flag, args);
-                if (flag == 0 && args != null && args.length > 0 && (args[0] instanceof Bitmap)) {
-                    Bitmap args1 = (Bitmap) args[0];
-                    foodIvimage.setImageBitmap(args1);
-                }
-            }
-
-            @Override
-            protected void onSuccess(Bitmap result) {
-                PhotoUploadTask put = new PhotoUploadTask(
-                        HttpUrl.ADDIMAGE, is,
-                        FoodFabuActivity.this, handler);
-                put.start();
-            }
-
-            @Override
-            protected void onError(Throwable ex, boolean isCallbackError) {
-                Too.oo(getResources().getString(R.string.shangchuantupianshibai));
                 dismissLooding();
             }
+
+            @Override
+            public void onError() {
+                dismissLooding();
+                foodIvimage.setImageResource(R.drawable.t2);
+            }
         });
-
-
+        data.execute(uri);
     }
 
     /**
@@ -411,9 +371,10 @@ public class FoodFabuActivity extends BaseActivity {
         if (file != null) {
             file.delete();
         }
-        if (handler != null) {
-            handler = null;
+        if (data != null && !data.isCancelled()) {
+            data.cancel(true);
         }
+        data = null;
         super.onDestroy();
     }
 

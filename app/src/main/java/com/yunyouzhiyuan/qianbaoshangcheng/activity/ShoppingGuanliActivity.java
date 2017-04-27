@@ -22,6 +22,7 @@ import com.yunyouzhiyuan.qianbaoshangcheng.model.IModel;
 import com.yunyouzhiyuan.qianbaoshangcheng.model.StorGuanliModel;
 import com.yunyouzhiyuan.qianbaoshangcheng.ui.Too;
 import com.yunyouzhiyuan.qianbaoshangcheng.ui.xlistview.XListView;
+import com.yunyouzhiyuan.qianbaoshangcheng.uitl.SpService;
 
 import org.xutils.view.annotation.ViewInject;
 import org.xutils.x;
@@ -241,7 +242,7 @@ public class ShoppingGuanliActivity extends BaseActivity {
         if (istop) {
             page = 0;
         }
-        model.getdata(MyApplication.getUser().getSid(), page, new IModel.AsyncCallBack() {
+        model.getdata(SpService.getSP().getStorId(), page, new IModel.AsyncCallBack() {
             @Override
             public void onSucceed(Object object) {
                 page++;

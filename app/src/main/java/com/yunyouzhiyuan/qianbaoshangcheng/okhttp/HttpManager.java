@@ -126,7 +126,11 @@ public class HttpManager {
         handler.post(new Runnable() {
             @Override
             public void run() {
-                callback.onFailure(call, io);
+                try {
+                    callback.onFailure(call, io);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
         });
     }
@@ -138,7 +142,11 @@ public class HttpManager {
         handler.post(new Runnable() {
             @Override
             public void run() {
-                callback.onError(code, msg);
+                try {
+                    callback.onError(code, msg);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
         });
     }
@@ -150,7 +158,11 @@ public class HttpManager {
         handler.post(new Runnable() {
             @Override
             public void run() {
-                callback.onSuccess(object);
+                try {
+                    callback.onSuccess(object);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
         });
     }

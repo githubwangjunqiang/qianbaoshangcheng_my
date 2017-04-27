@@ -140,11 +140,13 @@ public class Dialog_addTime extends Dialog {
             @Override
             public void onError(Object object) {
                 Too.oo(object);
+                loadingDialog.dismiss();
             }
 
             @Override
             public void onFailure(String string) {
                 Too.oo(string);
+                loadingDialog.dismiss();
             }
         });
     }

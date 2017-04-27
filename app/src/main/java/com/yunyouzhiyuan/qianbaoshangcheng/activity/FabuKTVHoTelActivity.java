@@ -128,11 +128,13 @@ public class FabuKTVHoTelActivity extends BaseActivity {
             "qianbaoshangcheng_image.jpeg") : null;
     private Uri imageUri;
     private AsyncTask<Uri, Void, String> execute;
-    private List<KTVList.DataBean> beanList = new ArrayList<>();
+    private List<KTVList.DataBean.SpecItemListBean> mTimeListBeen = new ArrayList<>();
+    private List<KTVList.DataBean.SpecItemListBean> mFangxingListBeen = new ArrayList<>();
+    private List<KTVList.DataBean.SpecItemListBean> mRiqiListBean = new ArrayList<>();
     private Call call;
     private TimeCountAdapter timeCountAdapter;
-    private List<KTVList.DataBean.SpecItemListBean> listTimeCount = new ArrayList<>();
     private KTVTimeCount.DataBean dataTimeCopunt;
+    private List<KTVList.DataBean> beanList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -204,7 +206,7 @@ public class FabuKTVHoTelActivity extends BaseActivity {
      */
     private void setTimeCountAdapter(List<String> list) {
         if (timeCountAdapter != null) {
-            timeCountAdapter.notifyDataSetChanged();
+            timeCountAdapter.setMap(list);
         } else {
             timeCountAdapter = new TimeCountAdapter(this, list);
             gvTimeCount.setAdapter(timeCountAdapter);
@@ -225,6 +227,13 @@ public class FabuKTVHoTelActivity extends BaseActivity {
             public void onSucceed(Object object) {
                 beanList.clear();
                 beanList.addAll((List<KTVList.DataBean>) object);
+                mFangxingListBeen.clear();
+                mFangxingListBeen.addAll(beanList.get(0).getSpecItemList());
+                mTimeListBeen.clear();
+                mTimeListBeen.addAll(beanList.get(1).getSpecItemList());
+                mRiqiListBean.clear();
+                mRiqiListBean.addAll(beanList.get(2).getSpecItemList());
+
                 if (beanList.size() >= 3) {
                     setFlowAdapterXing();
                     setFlowAdapterTime();
@@ -255,7 +264,7 @@ public class FabuKTVHoTelActivity extends BaseActivity {
         if (adapter != null) {
             adapter = null;
         }
-        adapter = new RiqiAdapter(this, beanList.get(2).getSpecItemList(), null);
+        adapter = new RiqiAdapter(this, mRiqiListBean, null);
         tagFlowLayout2.setAdapter(adapter);
     }
 
@@ -266,7 +275,7 @@ public class FabuKTVHoTelActivity extends BaseActivity {
         if (flowAdapter1 != null) {
             flowAdapter1.notifyDataChanged();
         } else {
-            flowAdapter1 = new FlowAdapter(beanList.get(1).getSpecItemList(), this);
+            flowAdapter1 = new FlowAdapter(mTimeListBeen, this);
             tagFlowLayout1.setAdapter(flowAdapter1);
             tagFlowLayout1.setOnSelectListener(new TagFlowLayout.OnSelectListener() {
                 @Override
@@ -288,7 +297,7 @@ public class FabuKTVHoTelActivity extends BaseActivity {
         if (flowAdapter0 != null) {
             flowAdapter0.notifyDataChanged();
         } else {
-            flowAdapter0 = new FlowAdapter(beanList.get(0).getSpecItemList(), this);
+            flowAdapter0 = new FlowAdapter(mFangxingListBeen, this);
             tagFlowLayout0.setAdapter(flowAdapter0);
             tagFlowLayout0.setOnSelectListener(new TagFlowLayout.OnSelectListener() {
                 @Override
@@ -399,7 +408,7 @@ public class FabuKTVHoTelActivity extends BaseActivity {
                     loadingDialog.dismiss();
                     return;
                 }
-                toDeleteTime(position, next, beanList.get(position).getSpecItemList().get(next).getItem_id());
+                toDeleteTime(position, next, mFangxingListBeen.get(next).getItem_id());
                 break;
             case 1://时间段
                 Set<Integer> times = tagFlowLayout1.getSelectedList();
@@ -417,7 +426,7 @@ public class FabuKTVHoTelActivity extends BaseActivity {
                     loadingDialog.dismiss();
                     return;
                 }
-                toDeleteTime(position, nextTime, beanList.get(position).getSpecItemList().get(nextTime).getItem_id());
+                toDeleteTime(position, nextTime, mTimeListBeen.get(nextTime).getItem_id());
                 break;
             default:
                 break;
@@ -434,22 +443,18 @@ public class FabuKTVHoTelActivity extends BaseActivity {
         modelktv.delSpecItem(SpService.getSP().getStorId(), beanList.get(position).getId(), id, new IModel.AsyncCallBack() {
             @Override
             public void onSucceed(Object object) {
-                if (beanList.get(position).getSpecItemList() != null &&
-                        beanList.get(position).getSpecItemList().size() >= finalNext) {
-                    beanList.get(position).getSpecItemList().remove(finalNext);
+
+                if (position == 0 && !mFangxingListBeen.isEmpty() && mFangxingListBeen.size() > finalNext) {
+                    mFangxingListBeen.remove(finalNext);
+                    setFlowAdapterXing();
                 }
-                switch (position) {
-                    case 0://房型
-                        setFlowAdapterXing();
-                        break;
-                    case 1://时间段
-                        setFlowAdapterTime();
-                        break;
-                    case 2://日期
-                        setFlowAdapterRiqi();
-                        break;
-                    default:
-                        break;
+                if (position == 1 && !mTimeListBeen.isEmpty() && mTimeListBeen.size() > finalNext) {
+                    mTimeListBeen.remove(finalNext);
+                    setFlowAdapterTime();
+                }
+                if (position == 2 && !mRiqiListBean.isEmpty() && mRiqiListBean.size() > finalNext) {
+                    mRiqiListBean.remove(finalNext);
+                    setFlowAdapterRiqi();
                 }
                 Too.oo(object);
                 loadingDialog.dismiss();
@@ -475,6 +480,7 @@ public class FabuKTVHoTelActivity extends BaseActivity {
      * @param index
      */
     private void showAddDialog(final int index) {
+
         if (beanList.size() < (index + 1) || TextUtils.isEmpty(beanList.get(index).getId())) {
             Too.oo("商品分类还没获取到或者您没选择，暂时不能添加");
             return;
@@ -486,7 +492,7 @@ public class FabuKTVHoTelActivity extends BaseActivity {
                     @Override
                     public void onClick(String name, String id) {
                         if (!beanList.isEmpty()) {
-                            beanList.get(index).getSpecItemList().add(new KTVList.DataBean.SpecItemListBean(id, name));
+                            mFangxingListBeen.add(new KTVList.DataBean.SpecItemListBean(id, name));
                             setFlowAdapterXing();
                         } else {
                             setView();
@@ -507,7 +513,7 @@ public class FabuKTVHoTelActivity extends BaseActivity {
                             setView();
                             return;
                         }
-                        beanList.get(index).getSpecItemList().
+                        mTimeListBeen.
                                 add(new KTVList.DataBean.SpecItemListBean(id, name));
                         setFlowAdapterTime();
                     }
@@ -522,7 +528,7 @@ public class FabuKTVHoTelActivity extends BaseActivity {
                             setView();
                             return;
                         }
-                        beanList.get(index).getSpecItemList()
+                        mRiqiListBean
                                 .add(new KTVList.DataBean.SpecItemListBean(id, name));
                         setFlowAdapterRiqi();
                     }
@@ -811,11 +817,11 @@ public class FabuKTVHoTelActivity extends BaseActivity {
         Map<String, String> stringMap = new ArrayMap<>();
         Iterator<Integer> iterator = selectedList.iterator();
         int index;
-        if (beanList.size() > 0 && beanList.get(0).getSpecItemList().size() > 0) {
+        if (beanList.size() > 0 && mFangxingListBeen.size() > 0) {
             while (iterator.hasNext()) {
                 index = iterator.next();
-                stringMap.put(beanList.get(0).getSpecItemList().get(index).getItem_id(),
-                        beanList.get(0).getSpecItemList().get(index).getItem());
+                stringMap.put(mFangxingListBeen.get(index).getItem_id(),
+                        mFangxingListBeen.get(index).getItem());
             }
         }
         final String wrap = new Gson().toJson(stringMap);
@@ -830,11 +836,11 @@ public class FabuKTVHoTelActivity extends BaseActivity {
         }
         Map<String, String> stringMap1 = new ArrayMap<>();
         Iterator<Integer> timeitor = selectedtime.iterator();
-        if (beanList.size() >= 1 && beanList.get(1).getSpecItemList().size() > 0) {
+        if (beanList.size() >= 1 && mTimeListBeen.size() > 0) {
             while (timeitor.hasNext()) {
                 index = timeitor.next();
-                stringMap1.put(beanList.get(1).getSpecItemList().get(index).getItem_id(),
-                        beanList.get(1).getSpecItemList().get(index).getItem());
+                stringMap1.put(mTimeListBeen.get(index).getItem_id(),
+                        mTimeListBeen.get(index).getItem());
             }
         }
         final String tim = new Gson().toJson(stringMap1);
@@ -845,10 +851,9 @@ public class FabuKTVHoTelActivity extends BaseActivity {
 
 
         Map<String, String> stringMap2 = new ArrayMap<>();
-        List<KTVList.DataBean.SpecItemListBean> specItemList = beanList.get(2).getSpecItemList();
-        for (int i = 0; i < specItemList.size(); i++) {
-            if (specItemList.get(i).isChecked()) {
-                stringMap2.put(specItemList.get(i).getItem_id(), specItemList.get(i).getItem());
+        for (int i = 0; i < mRiqiListBean.size(); i++) {
+            if (mRiqiListBean.get(i).isChecked()) {
+                stringMap2.put(mRiqiListBean.get(i).getItem_id(), mRiqiListBean.get(i).getItem());
             }
         }
 
